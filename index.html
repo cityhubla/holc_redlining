@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homeowners Loan Corporation Map</title>
+	<meta charset="utf-8" />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<style>
+.ui-opacity {
+  background:#FFF;
+  position:absolute;
+  left:10px;
+  top:70px;
+  height:200px;
+  width:28px;
+  border:1px solid rgba(0,0,0,0.4);
+  border-radius:3px;
+  z-index:1000;
+  }
+.ui-opacity .handle {
+  position:absolute;
+  background:#404040;
+  left:0;
+  top:20px;
+  width:26px;
+  height:10px;
+  border-radius:1px;
+  cursor:pointer;
+  cursor:ns-resize;
+  }
+  .ui-opacity .handle:hover {
+    background:#303030;
+    }
+</style>
+</head>
+<body>
+<div id='map'></div>
+<div id='control' class='ui-opacity'>
+  <div id='handle' class='handle'></div>
+</div>
+
+	<script>
+        L.mapbox.accessToken = 'pk.eyJ1IjoiY3J1emluNzN2dyIsImEiOiI3RDdhUi1NIn0.jaEqREZw7QQMRafKPNBdmA'; 
+        var handle = document.getElementById('handle'),
+            start = false,
+            startTop;
+        
+        var map = L.mapbox.map('map','',{maxZoom: 13,minZoom: 10})
+        .setView([34.052234, -118.243685], 11);
+        
+        var racialdotmap = L.tileLayer('http://demographics.coopercenter.org/DotMap/tiles4/{z}/{x}/{y}.png').addTo(map);
+        
+        var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a                                       href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+}).setOpacity(.5).addTo(map);
+        
+        var overlay = L.mapbox.tileLayer('cruzin73vw.7e1be19c',{zIndex: 2}).addTo(map);
+
+        document.onmousemove = function(e) {
+            if (!start) return;
+            // Adjust control.
+            handle.style.top = Math.max(-5, Math.min(195, startTop + parseInt(e.clientY, 10) - start)) + 'px';
+            // Adjust opacity.
+            overlay.setOpacity(1 - (handle.offsetTop / 200));
+        };
+
+        handle.onmousedown = function(e) {
+            // Record initial positions.
+            start = parseInt(e.clientY, 10);
+            startTop = handle.offsetTop - 5;
+            return false;
+        };
+
+        document.onmouseup = function(e) {
+            start = null;
+        };
+
+	</script>
+</body>
+</html>
