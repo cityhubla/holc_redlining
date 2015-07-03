@@ -1,4 +1,4 @@
-## Map for discussing 
+## Map for exploring racial inequality through land use in Los Angeles 
 
 ##About
 This map overlays the Homeowner's Loan Corporation (HOLC) Residential Security Map of Los Angeles, published in the 1930's with the Racial Dot Map of the 2010 US Census.
