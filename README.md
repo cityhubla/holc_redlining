@@ -13,6 +13,7 @@ This map overlays the following layers
 * Mapping Redlining: According to a paper published in [2003 by Amy E. Hillier](http://repository.upenn.edu/cgi/viewcontent.cgi?article=1002&context=cplan_papers), research associate at the Cartographic Modeling Laboratory, argued that Urban Researchers have relied on the HOLC maps as the single explanation in the loss of capital in urban neighborhoods across the country. "Maps with red lines are not adequate proof of redlining"(Hillier 415).She proposes future research through the records of municipal agencies and real estate records.
 * [Racial Covenants](http://www.kcet.org/socal/departures/columns/portraits/a-southern-california-dream-deferred.html): While language in the covenants exist in the deeds, access to the records is limited. Can the locations of racial convenants be determined by census demographic data, current building data(those built between 1917-1948) cross analyzed with maps from the Sanborn Fire Insurance Maps produce results that may paint a picture of which properties had these covenants?
  * Develop a method for analysis
+ * Steps to include [raster analysis](http://www.gsd.harvard.edu/gis/manual/raster/) of digitized maps.
 
 ##Data and maps
 * HOLC data: Data from the University of Marland's [T-RACES project](http://salt.umd.edu/T-RACES), T-RACES: a Testbed for the Redlining Archives of California's Exclusionary Spaces, R. Marciano, D. Goldberg, C. Hou
