@@ -1,7 +1,7 @@
 ## Investigative map for exploring racial inequality through land use in Los Angeles 
 
 ##About
-This is an investigative map that will continuously change as questions are explored into Los Angeles's development as a city. This is a personal project but perhaps a "citizen social science" project as this project along with the code and sources are shared here on github.
+This is an investigative map that will continuously change as questions are explored into Los Angeles's development as a city. This is a personal project but perhaps a "citizen social science" project as this along with the code and sources are shared here on github.
 
 ##Current Map
 This map overlays the following layers
