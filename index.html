@@ -25,7 +25,7 @@
   position:absolute;
   background:#404040;
   left:0;
-  top:20px;
+  top:100px;
   width:26px;
   height:10px;
   border-radius:1px;
@@ -51,13 +51,13 @@
         
         var map = L.mapbox.map('map','',{maxZoom: 13,minZoom: 10})
         .setView([34.052234, -118.243685], 11);
-        
-        var racialdotmap = L.tileLayer('http://demographics.coopercenter.org/DotMap/tiles4/{z}/{x}/{y}.png').addTo(map);
+
+        var racialdotmap = L.tileLayer('http://demographics.virginia.edu/DotMap/tiles4/{z}/{x}/{y}.png').addTo(map);
         
         var stamenLayer = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a                                       href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 }).setOpacity(.5).addTo(map);
         
-        var overlay = L.mapbox.tileLayer('cruzin73vw.7e1be19c',{zIndex: 2}).addTo(map);
+        var overlay = L.mapbox.tileLayer('cruzin73vw.7e1be19c',{zIndex: 2, opacity:.5}).addTo(map);
 
         document.onmousemove = function(e) {
             if (!start) return;
